@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Arabic translation for Sketchware Pro - Phase 1 (top user-facing strings).
+        For strings not yet translated here, Android falls back to values/strings.xml (English).
+        Contributions welcome via Crowdin / pull request.
+    -->
+
+    <string name="app_name">سكتشوير برو</string>
+
+    <!-- ==================== Common words ==================== -->
+    <string name="common_word_accept">حفظ</string>
+    <string name="common_word_activity">شاشة</string>
+    <string name="common_word_add">إضافة</string>
+    <string name="common_word_agree">موافق</string>
+    <string name="common_word_all">الكل</string>
+    <string name="common_word_block">بلوك</string>
+    <string name="common_word_cancel">إلغاء</string>
+    <string name="common_word_change">تغيير</string>
+    <string name="common_word_choose">اختيار</string>
+    <string name="common_word_close">إغلاق</string>
+    <string name="common_word_collection">مجموعة</string>
+    <string name="common_word_component">مكوّن</string>
+    <string name="common_word_continue">متابعة</string>
+    <string name="common_word_contributor">مساهم</string>
+    <string name="common_word_copy">نسخ</string>
+    <string name="common_word_create">إنشاء</string>
+    <string name="common_word_custom_view">عنصر مخصص</string>
+    <string name="common_word_decrypt">فك التشفير</string>
+    <string name="common_word_delete">حذف</string>
+    <string name="common_word_deleted">تم الحذف!</string>
+    <string name="common_word_dismiss">تجاهل</string>
+    <string name="common_word_deprecated">*مهجور</string>
+    <string name="common_word_description">الوصف</string>
+    <string name="common_word_detail">التفاصيل</string>
+    <string name="common_word_download">تنزيل</string>
+    <string name="common_word_duplicate">نسخ مكرر</string>
+    <string name="common_word_drawer">القائمة الجانبية</string>
+    <string name="common_word_edit">تعديل</string>
+    <string name="common_word_ended">انتهى</string>
+    <string name="common_word_enroll">اشتراك</string>
+    <string name="common_word_enrolled">مشترك</string>
+    <string name="common_word_exit">خروج</string>
+    <string name="common_word_export">تصدير</string>
+    <string name="common_word_finish">إنهاء</string>
+    <string name="common_word_font">خط</string>
+    <string name="common_word_go_to_documentation">انتقل للتوثيق</string>
+    <string name="common_word_goback">رجوع</string>
+    <string name="common_word_image">صورة</string>
+    <string name="common_word_import_all">استيراد الكل</string>
+    <string name="common_word_import">استيراد</string>
+    <string name="common_word_import_count">استيراد %s عنصر</string>
+    <string name="common_word_information">معلومات</string>
+    <string name="common_word_locale">اللغة</string>
+    <string name="common_word_modify">تعديل</string>
+    <string name="common_word_moreblock">بلوك إضافي</string>
+    <string name="common_word_next">التالي</string>
+    <string name="common_word_no">لا</string>
+    <string name="common_word_ok">موافق</string>
+    <string name="common_word_prev">السابق</string>
+    <string name="common_word_preview">معاينة</string>
+    <string name="common_word_private">خاص</string>
+    <string name="common_word_progressing">جاري التنفيذ</string>
+    <string name="common_word_project_information">معلومات المشروع</string>
+    <string name="common_word_project_information_app_name">اسم التطبيق</string>
+    <string name="common_word_project_information_package">حزمة الكود</string>
+    <string name="common_word_project_information_project">المشروع</string>
+    <string name="common_word_project_information_version_code">رقم الإصدار</string>
+    <string name="common_word_project_information_version_name">اسم الإصدار</string>
+    <string name="common_word_public">عام</string>
+    <string name="common_word_purchase">شراء</string>
+    <string name="common_word_remove">إزالة</string>
+    <string name="common_word_reset">إعادة تعيين</string>
+    <string name="common_word_restore">استعادة</string>
+    <string name="common_word_review">مراجعة</string>
+    <string name="common_word_run">تشغيل</string>
+    <string name="common_word_save">حفظ</string>
+    <string name="common_word_saved">تم الحفظ</string>
+    <string name="common_word_save_as_new">حفظ كنسخة جديدة</string>
+    <string name="common_word_see_all">عرض الكل</string>
+    <string name="common_word_see_more">عرض المزيد</string>
+    <string name="common_word_select">اختيار</string>
+    <string name="common_word_select_variant">اختر متغيراً</string>
+    <string name="common_word_change_variant">تغيير المتغير</string>
+    <string name="common_word_create_variant">إنشاء متغير جديد</string>
+    <string name="common_word_import_variant">استيراد من المتغير الافتراضي</string>
+    <string name="common_word_settings">الإعدادات</string>
+    <string name="common_word_share">مشاركة</string>
+    <string name="common_word_show">عرض</string>
+    <string name="common_word_sound">صوت</string>
+    <string name="common_word_step">خطوة %d</string>
+    <string name="common_word_submit">إرسال</string>
+    <string name="common_word_try_again">حاول مرة أخرى</string>
+    <string name="common_word_update">تحديث</string>
+    <string name="common_word_upload">رفع</string>
+    <string name="common_word_yes">نعم</string>
+
+    <!-- ==================== Main drawer ==================== -->
+    <string name="main_drawer_title_docs">التوثيق</string>
+    <string name="main_drawer_title_export_urls">تصدير الروابط</string>
+    <string name="main_drawer_title_language_settings">إعدادات اللغة</string>
+    <string name="main_drawer_title_program_information">معلومات البرنامج</string>
+    <string name="main_drawer_title_purchase_list">قائمة المشتريات</string>
+    <string name="main_drawer_title_remove_ads">إزالة الإعلانات</string>
+    <string name="main_drawer_title_save_sketchware">حفظ سكتشوير</string>
+    <string name="main_drawer_title_share_with_friends">شارك مع أصدقائك</string>
+    <string name="main_drawer_title_subscribe">اشترك</string>
+    <string name="main_drawer_title_system_settings">إعدادات النظام</string>
+
+    <!-- ==================== Block categories ==================== -->
+    <string name="block_category_component_func">مكوّنات</string>
+    <string name="block_category_control">تحكم</string>
+    <string name="block_category_file">ملفات</string>
+    <string name="block_category_list">قوائم</string>
+    <string name="block_category_math">رياضيات</string>
+    <string name="block_category_moreblock">بلوكات إضافية</string>
+    <string name="block_category_operator">عمليات</string>
+    <string name="block_category_var">متغيرات</string>
+    <string name="block_category_view_func">عناصر العرض</string>
+    <string name="block_move_to_bin">نقل لسلة المحذوفات</string>
+</resources>

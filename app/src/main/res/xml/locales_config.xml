@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Locales advertised to Android 13+'s per-app language picker. Only list a
+  locale here once at least a partial translation lives at
+  app/src/main/res/values-<locale>/strings.xml; otherwise users who pick the
+  language from system Settings see a fully English UI, which is misleading.
+
+  Phase 1 ships English (default) and Arabic. The roadmap targets Indonesian,
+  Portuguese (BR), Spanish, Russian, Hindi, Persian, Turkish, and Vietnamese
+  next - those entries should be re-added together with their values-<locale>
+  resource folders.
+-->
+<locale-config xmlns:android="http://schemas.android.com/apk/res/android">
+    <locale android:name="en" />
+    <locale android:name="ar" />
+</locale-config>
