@@ -1,0 +1,76 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+        "config:recommended",
+        ":dependencyDashboard",
+        ":semanticCommits",
+        ":automergeMinor",
+        "group:allNonMajor",
+        "schedule:weekly"
+    ],
+    "labels": [
+        "dependencies"
+    ],
+    "prHourlyLimit": 4,
+    "prConcurrentLimit": 8,
+    "rangeStrategy": "bump",
+    "lockFileMaintenance": {
+        "enabled": false
+    },
+    "packageRules": [
+        {
+            "description": "Group all AndroidX libraries together",
+            "matchPackagePatterns": [
+                "^androidx\\."
+            ],
+            "groupName": "AndroidX libraries"
+        },
+        {
+            "description": "Group all Firebase libraries together",
+            "matchPackagePatterns": [
+                "^com\\.google\\.firebase",
+                "^com\\.google\\.gms"
+            ],
+            "groupName": "Firebase / Google Services"
+        },
+        {
+            "description": "Group Kotlin updates together",
+            "matchPackagePatterns": [
+                "^org\\.jetbrains\\.kotlin"
+            ],
+            "groupName": "Kotlin"
+        },
+        {
+            "description": "Group Android Gradle Plugin + build tools",
+            "matchPackagePatterns": [
+                "^com\\.android\\.tools",
+                "^com\\.android\\.tools\\.build"
+            ],
+            "groupName": "Android build tools"
+        },
+        {
+            "description": "Pin r8 to 8.11.x until DependencyResolver.kt is migrated to the new java.nio.file.Path API",
+            "matchPackageNames": [
+                "com.android.tools:r8"
+            ],
+            "allowedVersions": "<8.12.0"
+        },
+        {
+            "description": "Manual review for major bumps",
+            "matchUpdateTypes": [
+                "major"
+            ],
+            "automerge": false,
+            "labels": [
+                "dependencies",
+                "major-bump"
+            ]
+        }
+    ],
+    "vulnerabilityAlerts": {
+        "labels": [
+            "security"
+        ],
+        "automerge": true
+    }
+}
