@@ -41,30 +41,45 @@ jobs:
                   SKETCHUB_API_KEY: ${{ secrets.SKETCHUB_API_KEY }}
               run: ./gradlew --no-build-cache --no-configuration-cache --no-daemon assembleRelease
 
+            - name: Resolve tag name
+              id: tag
+              shell: bash
+              # Workflow-dispatch input is funneled through an env var so a
+              # malicious tag_name cannot break out of the bash context.
+              env:
+                  INPUT_TAG_NAME: ${{ inputs.tag_name }}
+              run: |
+                  if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+                      TAG_NAME="$INPUT_TAG_NAME"
+                  else
+                      TAG_NAME="${GITHUB_REF#refs/tags/}"
+                  fi
+                  # Refuse anything but a sensible release tag to belt-and-braces
+                  # the env-var defence above.
+                  if ! [[ "$TAG_NAME" =~ ^[A-Za-z0-9._-]+$ ]]; then
+                      echo "::error::Refusing unsafe tag name: $TAG_NAME"
+                      exit 1
+                  fi
+                  echo "name=$TAG_NAME" >> "$GITHUB_OUTPUT"
+
+            - name: Rename APK with tag
+              shell: bash
+              env:
+                  TAG_NAME: ${{ steps.tag.outputs.name }}
+              run: |
+                  cd app/build/outputs/apk/release
+                  if [[ -f app-release.apk ]]; then
+                      mv app-release.apk "SketchwarePro-${TAG_NAME}.apk"
+                  fi
+                  ls -la
+
             - name: Compute checksums
+              # Runs AFTER the rename so SHA256SUMS.txt references the final
+              # filename users will actually download from the release.
               working-directory: app/build/outputs/apk/release
               run: |
                   sha256sum *.apk > SHA256SUMS.txt
                   cat SHA256SUMS.txt
-
-            - name: Resolve tag name
-              id: tag
-              shell: bash
-              run: |
-                  if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
-                      echo "name=${{ inputs.tag_name }}" >> "$GITHUB_OUTPUT"
-                  else
-                      echo "name=${GITHUB_REF#refs/tags/}" >> "$GITHUB_OUTPUT"
-                  fi
-
-            - name: Rename APK with tag
-              shell: bash
-              run: |
-                  cd app/build/outputs/apk/release
-                  if [[ -f app-release.apk ]]; then
-                      mv app-release.apk SketchwarePro-${{ steps.tag.outputs.name }}.apk
-                  fi
-                  ls -la
 
             - name: Create or update GitHub Release
               uses: softprops/action-gh-release@v2
