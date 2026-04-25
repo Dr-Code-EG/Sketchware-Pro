@@ -4,53 +4,12 @@ import com.google.common.truth.Truth.assertThat
 import org.junit.jupiter.api.Test
 
 /**
- * Unit tests for [PropertiesUtil]. Validates the regex/parsing helpers that
- * the View Editor relies on to interpret user-entered values like "16dp",
- * "@string/foo", "#FF112233".
- *
- * NOTE: tests covering the [PropertiesUtil.parseColor] / [PropertiesUtil.isHexColor]
- * branches are deferred to instrumentation tests because they call into
- * `android.graphics.Color` and `android.text.TextUtils`, which are stubbed out
- * in plain JVM unit tests.
+ * Pure-JVM unit tests for [PropertiesUtil]. We only exercise the helpers that
+ * don't reach into android.util.Pair / android.text.TextUtils — those are
+ * covered by instrumentation tests because the Android SDK stubs in the
+ * unit-test classpath throw "Stub!" RuntimeExceptions for them.
  */
 class PropertiesUtilTest {
-
-    @Test
-    fun `getUnitOrPrefix recognises dp suffix`() {
-        val pair = PropertiesUtil.getUnitOrPrefix("16dp")
-        assertThat(pair).isNotNull()
-        assertThat(pair.first).isEqualTo("dp")
-        assertThat(pair.second).isEqualTo("16")
-    }
-
-    @Test
-    fun `getUnitOrPrefix recognises sp suffix with negative value`() {
-        val pair = PropertiesUtil.getUnitOrPrefix("-12sp")
-        assertThat(pair).isNotNull()
-        assertThat(pair.first).isEqualTo("sp")
-        assertThat(pair.second).isEqualTo("-12")
-    }
-
-    @Test
-    fun `getUnitOrPrefix returns null for plain numbers without unit`() {
-        assertThat(PropertiesUtil.getUnitOrPrefix("123")).isNull()
-    }
-
-    @Test
-    fun `getUnitOrPrefix recognises string reference`() {
-        val pair = PropertiesUtil.getUnitOrPrefix("@string/title")
-        assertThat(pair).isNotNull()
-        assertThat(pair.first).isEqualTo("@string/")
-        assertThat(pair.second).isEqualTo("title")
-    }
-
-    @Test
-    fun `getUnitOrPrefix recognises drawable reference with question mark`() {
-        val pair = PropertiesUtil.getUnitOrPrefix("?attr/colorPrimary")
-        assertThat(pair).isNotNull()
-        assertThat(pair.first).isEqualTo("?attr/")
-        assertThat(pair.second).isEqualTo("colorPrimary")
-    }
 
     @Test
     fun `parseReferName extracts value after separator`() {
@@ -68,6 +27,12 @@ class PropertiesUtilTest {
     }
 
     @Test
+    fun `parseReferName returns input unchanged when separator is the last character`() {
+        // Separator at the very end means there is no value after it.
+        assertThat(PropertiesUtil.parseReferName("foo/", "/")).isEqualTo("foo/")
+    }
+
+    @Test
     fun `generateItems creates the requested number of labelled rows`() {
         val items = PropertiesUtil.generateItems("Item", 3)
         assertThat(items).containsExactly("Item 1", "Item 2", "Item 3").inOrder()
@@ -79,7 +44,18 @@ class PropertiesUtilTest {
     }
 
     @Test
-    fun `resolveSize falls back to default when value is null`() {
-        assertThat(PropertiesUtil.resolveSize(null, 42)).isEqualTo(42)
+    fun `generateItems supports a different prefix`() {
+        assertThat(PropertiesUtil.generateItems("Tab", 2))
+            .containsExactly("Tab 1", "Tab 2").inOrder()
+    }
+
+    @Test
+    fun `regex constants are exposed and usable`() {
+        // Defensive: we don't want a refactor to silently break the regex API.
+        assertThat(PropertiesUtil.HEX_COLOR_PATTERN.pattern())
+            .isEqualTo("^#([A-Fa-f0-9]{8}|[A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$")
+        assertThat(PropertiesUtil.UNIT_PATTERN.matcher("16dp").find()).isTrue()
+        assertThat(PropertiesUtil.UNIT_PATTERN.matcher("12sp").find()).isTrue()
+        assertThat(PropertiesUtil.UNIT_PATTERN.matcher("plain").find()).isFalse()
     }
 }

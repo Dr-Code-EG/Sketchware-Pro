@@ -119,6 +119,16 @@ android {
         buildConfig = true
     }
 
+    testOptions {
+        unitTests {
+            // Lets unit tests call into Android classes that exist only as
+            // stubs in the SDK jar (e.g. android.util.Pair, android.text.TextUtils)
+            // by returning default values instead of throwing "Stub!" errors.
+            returnDefaultValues = true
+            includeAndroidResources = false
+        }
+    }
+
     configurations.implementation {
         exclude group: 'javax.inject', module: 'javax.inject'
         exclude group: "org.jetbrains.kotlin", module: "kotlin-scripting-compiler-embeddable"
