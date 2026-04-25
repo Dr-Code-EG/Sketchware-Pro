@@ -69,7 +69,12 @@ jobs:
       - name: Build Release APK
         env:
           SKETCHUB_API_KEY: ${{ secrets.SKETCHUB_API_KEY }}
-        run: gradle assembleRelease
+        # Use the wrapper so the project's pinned Gradle version
+        # (gradle-8.13 in gradle-wrapper.properties) is honored.
+        # `gradle assembleRelease` resolves to the runner's preinstalled
+        # Gradle which currently ships 9.x and is incompatible with the
+        # AGP 8.x toolchain used here.
+        run: ./gradlew assembleRelease
 
       - name: Set short SHA
         id: set_sha
