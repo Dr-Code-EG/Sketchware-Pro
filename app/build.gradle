@@ -119,7 +119,11 @@ dependencies {
         exclude group: "com.intellij", module: "annotations"
     }
 
-    implementation "com.android.tools:r8:8.13.19"
+    // Pinned to 8.11.18: r8 8.13+ migrated several internal API signatures
+    // (e.g. D8Command.Builder.addClasspathFiles) from java.io.File to
+    // java.nio.file.Path. mod/pranav/dependency/resolver/DependencyResolver.kt
+    // calls the older signature; bump in a follow-up after porting that file.
+    implementation "com.android.tools:r8:8.11.18"
     implementation "com.github.Iyxan23:zipalign-java:1.2.2"
 
     implementation "com.google.code.gson:gson:2.14.0"
