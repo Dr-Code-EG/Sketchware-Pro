@@ -141,7 +141,11 @@ dependencies {
     implementation "com.github.Cosmic-Ide:DependencyResolver:05ec26af0b"
     implementation "com.github.PranavPurwar:filepicker:74526bea66"
 
-    implementation 'com.guardsquare:proguard-core:9.3.2'
+    // Pinned to 9.0.2: the locally-bundled proguard-base-7.2.2.jar embeds
+    // proguard-core classes that overlap with newer proguard-core releases
+    // (e.g. 9.1+ adds duplicate `proguard.util.*` classes). Bumping requires
+    // also replacing the bundled proguard-base jar.
+    implementation 'com.guardsquare:proguard-core:9.0.2'
 
     implementation "com.github.topjohnwu.libsu:core:5.0.4"
     implementation "dev.chrisbanes.insetter:insetter:0.6.1"
