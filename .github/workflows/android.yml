@@ -65,11 +65,38 @@ jobs:
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
+        with:
+          # Disable Develocity build-scan auto-injection. The injected init
+          # script can interact poorly with the Kotlin compile classpath in
+          # this project (mixed Java + Kotlin sources), causing spurious
+          # "Unresolved reference" errors that are not reproducible locally.
+          develocity-injection-enabled: false
+          # Disable Gradle cache entirely so a poisoned snapshot from a
+          # previous failed run can never be restored. The build is fast
+          # enough on the runner without it.
+          cache-disabled: true
+
+      - name: Make gradlew executable
+        run: chmod +x gradlew
+
+      - name: Wipe any stale Kotlin incremental snapshots
+        run: |
+          rm -rf ~/.gradle/caches/transforms-* ~/.gradle/caches/build-cache-* || true
+          rm -rf app/build || true
 
       - name: Build Release APK
         env:
           SKETCHUB_API_KEY: ${{ secrets.SKETCHUB_API_KEY }}
-        run: gradle assembleRelease
+          # Force a fresh isolated GRADLE_USER_HOME so no leftover daemon
+          # state or transformed jar can poison the Kotlin compile classpath.
+          GRADLE_USER_HOME: ${{ runner.temp }}/gradle-home
+        # Use the wrapper so the project's pinned Gradle version
+        # (gradle-8.13 in gradle-wrapper.properties) is honored.
+        # We disable build cache + configuration cache to avoid cached
+        # state on shared runners that produced misleading
+        # "Unresolved reference 'BuildSettings'" errors. Locally with the
+        # exact same Temurin 17.0.18 + Gradle 8.13 the build succeeds.
+        run: ./gradlew --no-build-cache --no-configuration-cache --no-daemon assembleRelease
 
       - name: Set short SHA
         id: set_sha
