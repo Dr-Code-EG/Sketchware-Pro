@@ -11,22 +11,29 @@ translations.
   When a key is missing in a locale file Android falls back to the base
   English string, so partial translations are always safe to merge.
 
-## Supported locales (Phase 1)
+## Supported locales
 
-Declared in `app/src/main/res/xml/locales_config.xml`:
+Declared in `app/src/main/res/xml/locales_config.xml`. We only list a
+locale here once at least a partial translation exists at
+`app/src/main/res/values-<locale>/strings.xml` — otherwise the
+Android 13+ system language picker would advertise a language that
+silently falls back to English.
 
+### Currently shipping
 | Tag    | Language          | Status        |
 |--------|-------------------|---------------|
 | `en`   | English (default) | 100%          |
 | `ar`   | Arabic            | Phase 1 seed  |
-| `id`   | Indonesian        | Planned       |
-| `pt-BR`| Portuguese (BR)   | Planned       |
-| `es`   | Spanish           | Planned       |
-| `ru`   | Russian           | Planned       |
-| `hi`   | Hindi             | Planned       |
-| `fa`   | Persian           | Planned       |
-| `tr`   | Turkish           | Planned       |
-| `vi`   | Vietnamese        | Planned       |
+
+### Planned (will be added to `locales_config.xml` together with their `values-<locale>/`)
+- `id` — Indonesian
+- `pt-BR` — Portuguese (Brazil)
+- `es` — Spanish
+- `ru` — Russian
+- `hi` — Hindi
+- `fa` — Persian
+- `tr` — Turkish
+- `vi` — Vietnamese
 
 ## How to translate
 
