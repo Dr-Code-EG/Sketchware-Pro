@@ -71,7 +71,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
-import com.google.firebase.crashlytics.FirebaseCrashlytics;
+import pro.sketchware.utility.telemetry.SafeCrashlytics;
 
 import java.io.File;
 import java.lang.ref.WeakReference;
@@ -136,7 +136,7 @@ public class LogicEditorActivity extends BaseAppCompatActivity implements View.O
 
     private final Handler handler = new Handler();
     private final int[] v = new int[2];
-    private final FirebaseCrashlytics crashlytics = FirebaseCrashlytics.getInstance();
+    private final SafeCrashlytics crashlytics = SafeCrashlytics.get();
     public ProjectFileBean M;
     public PaletteBlock m;
     public BlockPane o;

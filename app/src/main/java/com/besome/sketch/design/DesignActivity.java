@@ -63,7 +63,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.progressindicator.LinearProgressIndicator;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
-import com.google.firebase.crashlytics.FirebaseCrashlytics;
+import pro.sketchware.utility.telemetry.SafeCrashlytics;
 import com.topjohnwu.superuser.Shell;
 
 import java.io.File;
@@ -129,7 +129,7 @@ import pro.sketchware.utility.apk.ApkSignatures;
 public class DesignActivity extends BaseAppCompatActivity implements View.OnClickListener {
     public static String sc_id;
     private final Handler handler = new Handler(Looper.getMainLooper());
-    private final FirebaseCrashlytics crashlytics = FirebaseCrashlytics.getInstance();
+    private final SafeCrashlytics crashlytics = SafeCrashlytics.get();
     private ImageView xmlLayoutOrientation;
     private boolean B;
     private int currentTabNumber;

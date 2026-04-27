@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Indonesian (id) seed translation for Sketchware Pro - Phase 2.
+        Untranslated strings fall back to values/strings.xml (English).
+        Contributions welcome via pull request / Crowdin (rencana Phase 2).
+    -->
+
+    <string name="app_name">Sketchware Pro</string>
+
+    <!-- ==================== Common words ==================== -->
+    <string name="common_word_accept">Simpan</string>
+    <string name="common_word_activity">Aktivitas</string>
+    <string name="common_word_add">Tambah</string>
+    <string name="common_word_agree">Setuju</string>
+    <string name="common_word_all">Semua</string>
+    <string name="common_word_block">Blok</string>
+    <string name="common_word_cancel">Batal</string>
+    <string name="common_word_change">Ubah</string>
+    <string name="common_word_choose">Pilih</string>
+    <string name="common_word_close">Tutup</string>
+    <string name="common_word_collection">Koleksi</string>
+    <string name="common_word_component">Komponen</string>
+    <string name="common_word_continue">Lanjutkan</string>
+    <string name="common_word_copy">Salin</string>
+    <string name="common_word_create">Buat</string>
+    <string name="common_word_delete">Hapus</string>
+    <string name="common_word_deleted">Terhapus!</string>
+    <string name="common_word_dismiss">Abaikan</string>
+    <string name="common_word_description">Deskripsi</string>
+    <string name="common_word_detail">Detail</string>
+    <string name="common_word_download">Unduh</string>
+    <string name="common_word_edit">Edit</string>
+    <string name="common_word_exit">Keluar</string>
+    <string name="common_word_export">Ekspor</string>
+    <string name="common_word_finish">Selesai</string>
+    <string name="common_word_font">Font</string>
+    <string name="common_word_goback">Kembali</string>
+    <string name="common_word_image">Gambar</string>
+    <string name="common_word_import">Impor</string>
+    <string name="common_word_information">Informasi</string>
+    <string name="common_word_locale">Bahasa</string>
+    <string name="common_word_modify">Ubah</string>
+    <string name="common_word_next">Berikutnya</string>
+    <string name="common_word_no">Tidak</string>
+    <string name="common_word_ok">OK</string>
+    <string name="common_word_prev">Sebelumnya</string>
+    <string name="common_word_preview">Pratinjau</string>
+    <string name="common_word_private">Pribadi</string>
+    <string name="common_word_progressing">Sedang berjalan</string>
+    <string name="common_word_public">Publik</string>
+    <string name="common_word_remove">Hapus</string>
+    <string name="common_word_reset">Atur ulang</string>
+    <string name="common_word_restore">Pulihkan</string>
+    <string name="common_word_run">Jalankan</string>
+    <string name="common_word_save">Simpan</string>
+    <string name="common_word_saved">Tersimpan</string>
+    <string name="common_word_select">Pilih</string>
+    <string name="common_word_share">Bagikan</string>
+    <string name="common_word_show">Tampilkan</string>
+    <string name="common_word_update">Perbarui</string>
+    <string name="common_word_upload">Unggah</string>
+    <string name="common_word_view">Lihat</string>
+    <string name="common_word_yes">Ya</string>
+
+    <!-- ==================== Main tabs ==================== -->
+    <string name="main_tab_title_competitions">Kompetisi</string>
+    <string name="main_tab_title_myproject">Proyek Saya</string>
+    <string name="main_tab_title_projects_store">Toko Proyek</string>
+    <string name="main_tab_title_tutorials">Tutorial</string>
+
+    <!-- ==================== Drawer ==================== -->
+    <string name="main_drawer_title_docs">Dokumentasi</string>
+    <string name="main_drawer_title_export_urls">URL Ekspor</string>
+    <string name="main_drawer_title_language_settings">Pengaturan Bahasa</string>
+    <string name="main_drawer_title_program_information">Informasi Program</string>
+    <string name="main_drawer_title_purchase_list">Daftar Pembelian</string>
+    <string name="main_drawer_title_remove_ads">Hapus Iklan</string>
+    <string name="main_drawer_title_save_sketchware">Simpan Sketchware</string>
+    <string name="main_drawer_title_share_with_friends">Bagikan dengan Teman</string>
+    <string name="main_drawer_title_subscribe">Berlangganan</string>
+    <string name="main_drawer_title_system_settings">Pengaturan Sistem</string>
+
+    <!-- ==================== Settings ==================== -->
+    <string name="settings_appearance">Tampilan</string>
+    <string name="settings_appearance_description">Ubah tampilan Sketchware</string>
+    <string name="settings_appearance_theme">Tema Sketchware</string>
+    <string name="settings_appearance_theme_system">Bawaan sistem</string>
+    <string name="settings_appearance_theme_light">Tema terang</string>
+    <string name="settings_appearance_theme_dark">Tema gelap</string>
+
+    <!-- ==================== Block categories ==================== -->
+    <string name="block_category_component_func">Komponen</string>
+    <string name="block_category_control">Kontrol</string>
+    <string name="block_category_file">Berkas</string>
+    <string name="block_category_list">Daftar</string>
+    <string name="block_category_math">Matematika</string>
+    <string name="block_category_moreblock">Blok tambahan</string>
+    <string name="block_category_operator">Operator</string>
+    <string name="block_category_var">Variabel</string>
+    <string name="block_category_view_func">Tampilan</string>
+
+    <!-- ==================== Common errors ==================== -->
+    <string name="common_error_activity_not_found">Aktivitas tidak ditemukan</string>
+    <string name="common_error_an_error_occurred">Terjadi kesalahan!</string>
+    <string name="common_error_failed_to_connect_server">Gagal terhubung ke server</string>
+    <string name="common_error_failed_to_save">Gagal menyimpan</string>
+    <string name="common_error_unknown">Kesalahan tidak diketahui! Silakan hubungi administrator</string>
+</resources>
