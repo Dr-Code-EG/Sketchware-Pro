@@ -64,7 +64,7 @@ import com.besome.sketch.editor.view.item.ItemVerticalScrollView;
 import com.besome.sketch.editor.view.item.ItemWebView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
-import com.google.firebase.crashlytics.FirebaseCrashlytics;
+import pro.sketchware.utility.telemetry.SafeCrashlytics;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -117,7 +117,7 @@ import pro.sketchware.utility.ThemeUtils;
 
 public class ViewPane extends RelativeLayout {
     private final String stringsStart = "@string/";
-    private final FirebaseCrashlytics crashlytics = FirebaseCrashlytics.getInstance();
+    private final SafeCrashlytics crashlytics = SafeCrashlytics.get();
     private Context context;
     private ViewGroup rootLayout;
     private int b = 99;

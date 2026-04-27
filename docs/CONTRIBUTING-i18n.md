@@ -20,13 +20,13 @@ Android 13+ system language picker would advertise a language that
 silently falls back to English.
 
 ### Currently shipping
-| Tag    | Language          | Status        |
-|--------|-------------------|---------------|
-| `en`   | English (default) | 100%          |
-| `ar`   | Arabic            | Phase 1 seed  |
+| Tag    | Language          | Status                              |
+|--------|-------------------|-------------------------------------|
+| `en`   | English (default) | 100%                                |
+| `ar`   | Arabic            | Phase 2 (≈160 strings, expanding)   |
+| `id`   | Indonesian        | Phase 2 seed (≈100 strings)         |
 
 ### Planned (will be added to `locales_config.xml` together with their `values-<locale>/`)
-- `id` — Indonesian
 - `pt-BR` — Portuguese (Brazil)
 - `es` — Spanish
 - `ru` — Russian

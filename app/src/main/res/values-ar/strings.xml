@@ -118,4 +118,75 @@
     <string name="block_category_var">متغيرات</string>
     <string name="block_category_view_func">عناصر العرض</string>
     <string name="block_move_to_bin">نقل لسلة المحذوفات</string>
+
+    <!-- ==================== Main tabs ==================== -->
+    <string name="main_tab_title_competitions">المسابقات</string>
+    <string name="main_tab_title_myproject">مشاريعي</string>
+    <string name="main_tab_title_projects_store">متجر المشاريع</string>
+    <string name="main_tab_title_tutorials">الدروس</string>
+
+    <!-- ==================== Settings ==================== -->
+    <string name="settings_appearance">المظهر</string>
+    <string name="settings_appearance_description">تغيير مظهر التطبيق</string>
+    <string name="settings_appearance_theme">سمة سكتشوير</string>
+    <string name="settings_appearance_theme_system">إعدادات النظام</string>
+    <string name="settings_appearance_theme_light">السمة الفاتحة</string>
+    <string name="settings_appearance_theme_dark">السمة الداكنة</string>
+    <string name="settings_events_manager">مدير الأحداث</string>
+    <string name="settings_events_manager_activity_events">أحداث الشاشة</string>
+    <string name="settings_events_manager_listeners">المستمعون</string>
+    <string name="settings_events_manager_details">تفاصيل مدير الأحداث</string>
+    <string name="settings_block_selector">مدير منتقي البلوكات</string>
+
+    <!-- ==================== My Projects ==================== -->
+    <string name="myprojects_confirm_project_delete">هل أنت متأكد من حذف هذا المشروع؟</string>
+    <string name="myprojects_customize_icon">تخصيص الأيقونة</string>
+    <string name="myprojects_export_project_actionbar_title">تصدير المشروع</string>
+    <string name="myprojects_export_project_button_export_src">تصدير الكود المصدري</string>
+    <string name="myprojects_export_project_button_send_src_zip">إرسال الكود المصدري كملف Zip</string>
+    <string name="myprojects_export_project_button_sign_apk">توقيع الـ APK</string>
+    <string name="myprojects_export_project_title_export_src">كود مصدري لـ Android Studio</string>
+    <string name="myprojects_export_project_title_local_path">مسار محلي</string>
+    <string name="myprojects_export_project_title_sign_apk">توقيع الـ APK</string>
+    <string name="myprojects_list_menu_title_create_a_new_project">مشروع جديد</string>
+    <string name="myprojects_list_menu_title_delete">حذف</string>
+    <string name="myprojects_list_menu_title_settings">إعدادات</string>
+
+    <!-- ==================== Manage exported URLs ==================== -->
+    <string name="manage_export_url_actionbar_title">إدارة الروابط المصدّرة</string>
+    <string name="manage_export_url_list_app_name">اسم التطبيق</string>
+    <string name="manage_export_url_list_expire_dt_expired">منتهي الصلاحية</string>
+    <string name="manage_export_url_list_package_name">اسم الحزمة</string>
+    <string name="manage_export_url_list_reg_dt">تاريخ التسجيل</string>
+    <string name="manage_export_url_message_no_url">لا يوجد رابط مُصدَّر.</string>
+
+    <!-- ==================== Common errors / messages ==================== -->
+    <string name="common_error_activity_not_found">الشاشة غير موجودة</string>
+    <string name="common_error_an_error_occurred">حدث خطأ!</string>
+    <string name="common_error_failed_to_connect_server">فشل الاتصال بالخادم</string>
+    <string name="common_error_failed_to_save">فشل الحفظ</string>
+    <string name="common_error_unknown">خطأ غير معروف! يرجى التواصل مع المسؤول</string>
+
+    <!-- ==================== Search ==================== -->
+    <string name="search_recent_button_delete_all_recent_keyword">حذف الكل</string>
+    <string name="search_recent_message_delete_keyword_dialog_delete_all">هل تريد حذف كل الكلمات المفتاحية؟</string>
+    <string name="search_recent_message_delete_keyword_dialog_delete_one">هل تريد حذف هذه الكلمة المفتاحية؟</string>
+    <string name="search_recent_message_no_data">لا توجد كلمات مفتاحية حديثة لعرضها</string>
+    <string name="search_recent_recent_keyword">الكلمات المفتاحية الحديثة</string>
+    <string name="search_recent_title">بحث المحتوى</string>
+    <string name="search_recent_title_delete_keyword_dialog">حذف كلمة مفتاحية</string>
+    <string name="search_result_message_no_data">لا توجد نتائج بحث للعرض. :(</string>
+    <string name="search_result_title">نتائج البحث عن %s</string>
+
+    <!-- ==================== Theme presets ==================== -->
+    <string name="theme_section_title">قوالب السمة</string>
+    <string name="theme_section_description">اختر من السمات الجاهزة أو أنشئ سمة عشوائية</string>
+    <string name="theme_generate_random">إنشاء عشوائي</string>
+    <string name="theme_random_generated">تم إنشاء سمة عشوائية</string>
+
+    <!-- ==================== Drawer (root) ==================== -->
+    <string name="main_drawer_context_menu_title_slack_invitation">احصل على دعوتي</string>
+    <string name="main_drawer_context_menu_title_slack_open">افتح في Slack (يلزم دعوة)</string>
+    <string name="main_drawer_title_ad_label">تطبيقات أخرى لـ Sketchware</string>
+    <string name="main_drawer_title_sketchware_for_arduino">سكتشوير لـ Arduino</string>
 </resources>
